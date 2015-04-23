@@ -2,8 +2,7 @@ FROM tutum.co/casey/wordpress:latest
 MAINTAINER Casey Link <casey@outskirtslabs.com>
 
 WORKDIR /
-RUN rm -rf /app && \
-    mkdir /app
+RUN find /app  -maxdepth 1 ! -iname "wp-content" -type d -exec rm -rf {} +
 
 ADD run_duplicator.sh /run_duplicator.sh
 RUN chmod +x /*.sh
