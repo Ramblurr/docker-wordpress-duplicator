@@ -9,7 +9,7 @@ if [ -f /duplicator/installer.php ]; then
         mv /duplicator/*.zip /app
         echo "=> Moved /duplicator/*zip"
 
-        if [ -f /duplicator/wp-config.php]; then
+        if [ -f /duplicator/wp-config.php ]; then
             mv /app/wp-config.php /app/wp-config.${now}.bak
             echo "=> Backed up existing /app/wp-config.php to /app/wp-config.${now}.bak"
         fi
